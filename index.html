@@ -1,0 +1,54 @@
+<!--some notes/resources
+https://www.youtube.com/watch?v=j59qQ7YWLxw&list=PLZlA0Gpn_vH8DWL14Wud_m8NeNNbYKOkj - video
+
+html creates the stuff on screen, defining elements, headings, buttons, links, images, etc
+css styles the webpage with spacing, font, colors, stuff like grid
+js makes the webpage do things
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/ - helps on flex
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <!--link is to get external resources, in this case to get stylesheets which are commonly js files
+    rel is specifying the relationship which is stylesheet here-->
+    <link href="styles.css" rel="stylesheet">
+    <!--script embeds a script into the webpage usually in js, defer makes it so it will run after everything loads,
+    async makes it load async with everything else and runs it immediately after its done,
+    without either it will just go along with the code but also increases loading times-->
+    <script src="script.js" defer></script>
+</head>
+
+
+<body><!--in this context, having class="x" will be referenced in css, 
+    data-x(data attribute) will be referenced in js-->
+    <div class="calculator-grid">
+        <div class="output">
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand"></div>
+        </div>
+        <button data-all-clear class="span-two">AC</button>
+        <button data-delete>DEL</button>
+        <button data-operation>/</button>
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-operation>*</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-operation>+</button>
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-operation>-</button>
+        <button data-number>.</button>
+        <button data-number>0</button>
+        <button data-equals class="span-two">=</button>
+    </div>
+</body>
+</html> 

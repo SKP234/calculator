@@ -1,0 +1,58 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right,#00AAFF,#00FF6C)
+}
+
+.calculator-grid{
+    display: grid;
+    justify-content: center; /*centers box width*/
+    align-content: center; /*centers box height*/
+    min-height:100vh; /*fills up 100 percent of the height*/
+    grid-template-columns: repeat(4,100px); /*creates 4 100px columns*/
+    grid-template-rows: minmax(120px,auto) repeat(5,100px); /*creates a 120px that can increase if needed then creates 5 100px rows*/
+}
+
+.calculator-grid > button{ /*selects buttons*/
+    cursor: pointer; /*changes mouse to pointer when hovering over*/
+    font-size: 2rem; /*2 root fontsize = 2*16px*/
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255,255,255, .6)
+}
+
+.calculator-grid > button:hover{ 
+    background-color: rgba(255,255,255, 0.7);
+
+}
+
+.span-two{
+    grid-column: span 2; /*takes up 2 spots column wise in a grid*/
+}
+
+.output{
+    grid-column: 1 / -1; /*makes so the black thing spans to the last column*/
+    background-color: rgba(0,0,0 , 0.75);
+    display: flex; /*lets us use flex stuff*/
+    align-items: flex-end; /*items are aligned towards the end, in this case along the row direction on the right*/
+    justify-content: space-between; /*justifies along column, y direction*/
+    flex-direction: column; /*flex stuff goes in the column direction*/
+    padding:10px; /*pads edge of black output area*/
+    word-wrap: break-word; /*lets super long number get broken up into more lines*/
+    word-break: break-all; /*lets the broken up number break at any character*/
+}
+
+.output .previous-operand{ /*selects .previous-operand elements ONLY INSIDE .output*/
+    color: rgba(255,255,255,0.75);
+    font-size: 1.5rem;
+}
+.output .current-operand{
+    color: rgba(255,255,255);
+    font-size: 2.5rem;
+}
